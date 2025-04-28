@@ -1,0 +1,55 @@
+.breadcrumb-item>a:hover {
+    text-decoration: underline;
+}
+
+.arrow,
+.sidebar-link {
+    transition: all 0.15s ease-out;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 0.15rem 0.15rem 0;
+    display: inline-block;
+    padding: 0.15rem;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.sidebar-item.selected .arrow {
+    border-color: white;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.sidebar-item .active>.arrow,
+.sidebar-item.selected .active>.arrow {
+    border-color: white;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.sidebar-item .sidebar-link:hover>.arrow {
+    border-color: #5D87FF;
+}
+
+.sidebar-item.selected .sidebar-link:hover>.arrow {
+    border-color: white;
+}
+
+.sidebar-link.active:hover>.arrow {
+    border-color: white;
+}
+
+.sidebar-link:active>.arrow,
+.sidebar-link.active:active>.arrow {
+    border-color: white;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.sidebar-link.dropdown,
+.sidebar-link.dropdown.active {
+    background-color: #EEF3FF !important;
+    color: #5D87FF !important;
+}
