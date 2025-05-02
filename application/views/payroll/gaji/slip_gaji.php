@@ -333,6 +333,24 @@
                         </p>
                     </td>
                 </tr>
+            <?php elseif (empty($jabatan_struktural_aktif) && empty($jabatan_struktural_history)) : ?>
+                <tr>
+                    <td style="border: none; padding-left: 6%;" width="65%">
+                        <p>
+                            <span>Tunjangan Jabatan struktural</span>
+                        </p>
+                    </td>
+                    <td style="border: none;">
+                        <p>
+                            <span>:</span>
+                        </p>
+                    </td>
+                    <td style="border: none;" width="33%">
+                        <p>
+                            <span><?= format_rupiah($data_pegawai->gaji_generate_t_jabatan_struktural); ?></span>
+                        </p>
+                    </td>
+                </tr>
             <?php endif; ?>
             <tr>
                 <td style="border: none; padding-left: 6%;" width="65%">
