@@ -87,7 +87,7 @@ $route['administrator/payroll/gaji/detail-potongan'] = 'admin/payroll/Gaji/detai
 $route['administrator/payroll/gaji/generate/(:num)/(:any)'] = 'admin/payroll/Gaji/gaji_generate/$1/$2';
 $route['administrator/payroll/gaji/export-excel/(:num)/(:any)'] = 'admin/payroll/Gaji/export_excel/$1/$2';
 $route['administrator/payroll/gaji/export-payroll/(:num)/(:any)'] = 'admin/payroll/Gaji/export_payroll/$1/$2';
-// Gaji
+// Rapel Gaji
 $route['administrator/payroll/rapel-gaji'] = 'admin/payroll/RapelGaji/gaji';
 $route['administrator/payroll/rapel-gaji/index/(:num)'] = 'admin/payroll/RapelGaji/gaji_index/$1';
 $route['administrator/payroll/rapel-gaji/store'] = 'admin/payroll/RapelGaji/store';

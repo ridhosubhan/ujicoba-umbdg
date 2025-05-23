@@ -314,6 +314,23 @@
                         </p>
                     </td>
                 </tr>
+                <tr>
+                    <td style="border: none; padding-left: 6%;" width="65%">
+                        <p>
+                            <span>Keterangan Gaji Rapel</span>
+                        </p>
+                    </td>
+                    <td style="border: none;">
+                        <p>
+                            <span>:</span>
+                        </p>
+                    </td>
+                    <td style="border: none;" width="33%">
+                        <p>
+                            <span><?= $data_pegawai->keterangan_gaji_rapel ?></span>
+                        </p>
+                    </td>
+                </tr>
             <?php endif; ?>
             <?php if (!empty($jabatan_struktural_aktif) || !empty($jabatan_struktural_history)) : ?>
                 <tr>

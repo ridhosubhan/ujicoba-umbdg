@@ -1164,11 +1164,12 @@ class Gaji extends CI_Controller
         $sheet->mergeCells('A12:B12');
         $sheet->setCellValue('A13', "Gaji Pokok");
         $sheet->setCellValue('A14', "Gaji Rapel");
-        $sheet->setCellValue('A15', "Tunjangan Jabatan Struktural");
-        $sheet->setCellValue('A16', "Tunjangan Kehadiran");
-        $sheet->setCellValue('A17', "Tunjangan Lembur");
-        $sheet->setCellValue('A18', "TOTAL PENGHASILAN (A)");
-        $sheet->getStyle('A18')->getFont()->setBold(true);
+        $sheet->setCellValue('A15', "Keterangan Gaji Rapel");
+        $sheet->setCellValue('A16', "Tunjangan Jabatan Struktural");
+        $sheet->setCellValue('A17', "Tunjangan Kehadiran");
+        $sheet->setCellValue('A18', "Tunjangan Lembur");
+        $sheet->setCellValue('A19', "TOTAL PENGHASILAN (A)");
+        $sheet->getStyle('A19')->getFont()->setBold(true);
 
         $sheet->setCellValue('B13', ":");
         $sheet->setCellValue('B14', ":");
@@ -1176,13 +1177,15 @@ class Gaji extends CI_Controller
         $sheet->setCellValue('B16', ":");
         $sheet->setCellValue('B17', ":");
         $sheet->setCellValue('B18', ":");
-        $sheet->getStyle('B18')->getFont()->setBold(true);
+        $sheet->setCellValue('B19', ":");
+        $sheet->getStyle('B19')->getFont()->setBold(true);
 
         $sheet->setCellValue('C13', format_rupiah($data_export["data_pegawai"]->gaji_generate_gaji_pokok));
         $sheet->setCellValue('C14', format_rupiah($data_export["data_pegawai"]->gaji_rapel));
-        $sheet->setCellValue('C15', format_rupiah($data_export["data_pegawai"]->gaji_generate_t_jabatan_struktural));
+        $sheet->setCellValue('C15', $data_export["data_pegawai"]->keterangan_gaji_rapel);
+        $sheet->setCellValue('C16', format_rupiah($data_export["data_pegawai"]->gaji_generate_t_jabatan_struktural));
         $tunjangan_kehadiran = empty($data_export["data_kehadiran_single"]->total) ? 0 :  $data_export["data_kehadiran_single"]->total;
-        $sheet->setCellValue('C16', format_rupiah($tunjangan_kehadiran));
+        $sheet->setCellValue('C17', format_rupiah($tunjangan_kehadiran));
         $tunjangan_lembur =  0;
         if (empty($data_export["data_lembur_single"]->total_nilai) && empty($data_export["data_lembur_single"]->nilai_bulk)) {
             $tunjangan_lembur =  0;
@@ -1191,13 +1194,13 @@ class Gaji extends CI_Controller
         } else if (!empty($data_export["data_lembur_single"]->nilai_bulk)) {
             $tunjangan_lembur = $data_export["data_lembur_single"]->nilai_bulk;
         }
-        $sheet->setCellValue('C17', format_rupiah($tunjangan_lembur));
+        $sheet->setCellValue('C18', format_rupiah($tunjangan_lembur));
         $jumlah_penghasilan = $data_export["data_pegawai"]->gaji_generate_gaji_pokok +
             $data_export["data_pegawai"]->gaji_rapel +
             $data_export["data_pegawai"]->gaji_generate_t_jabatan_struktural +
             $tunjangan_kehadiran + $tunjangan_lembur;
-        $sheet->setCellValue('C18', format_rupiah($jumlah_penghasilan));
-        $sheet->getStyle('C18')->getFont()->setBold(true);
+        $sheet->setCellValue('C19', format_rupiah($jumlah_penghasilan));
+        $sheet->getStyle('C19')->getFont()->setBold(true);
 
 
         $sheet->setCellValue('D12', "POTONGAN");
