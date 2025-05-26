@@ -418,7 +418,7 @@ class M_gaji extends CI_Model
                 JOIN " . $this->db_hrms->database . ".gaji_generate ON " . $this->db_hrms->database . ".gaji_generate.pegawai_id = " . $this->db_hrms->database . ".pegawai.id 
                     AND " . $this->db_hrms->database . ".gaji_generate.bulan = " . $bulan . "
                
-                JOIN " . $this->db_hrms->database . ".gaji_rapel ON " . $this->db_hrms->database . ".gaji_rapel.pegawai_id = " . $this->db_hrms->database . ".pegawai.id 
+                LEFT JOIN " . $this->db_hrms->database . ".gaji_rapel ON " . $this->db_hrms->database . ".gaji_rapel.pegawai_id = " . $this->db_hrms->database . ".pegawai.id 
                     AND " . $this->db_hrms->database . ".gaji_rapel.bulan = " . $bulan . "
                     
                 LEFT OUTER JOIN " . $this->db_hrms->database . ".trans_jabatan_akademik ON " . $this->db_hrms->database . ".trans_jabatan_akademik.pegawai_id=" . $this->db_hrms->database . ".pegawai.id
